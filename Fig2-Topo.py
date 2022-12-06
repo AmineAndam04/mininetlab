@@ -1,4 +1,6 @@
-from mininet.topo import Topo,node,link
+from mininet.topo import Topo
+from mininet.link import TCIntf
+from mininet.node import CPULimitedHost
 
 class MyTopo( Topo,node,link ):
 
@@ -14,7 +16,7 @@ class MyTopo( Topo,node,link ):
         self.addLink( leftHost , Switch )
         self.addLink( rightSwitch, Switch )
         self.setCPUFrac(leftHost,0.2)
-        self.TCIntf.config(rightHost,100,50)
+        self.config(rightHost,100,50)
 
 
 topos = { 'mytopo': ( lambda: MyTopo() ) }
