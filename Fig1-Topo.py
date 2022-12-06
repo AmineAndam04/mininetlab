@@ -19,6 +19,7 @@ class MyTopo( Topo ):
         self.addLink( rightSwitch, rightHost )
         
         self.setIP(leftSwitch, ip="10.0.1.1")
+        
         self.setIP(rightSwitch, ip="10.0.2.1")
 
 
