@@ -8,13 +8,13 @@ class MyTopo( Topo,TCIntf,CPULimitedHost ):
         
 
         # Add hosts and switches
-        leftHost = self.addHost( 'h1' )
-        rightHost = self.addHost( 'h2' )
+        leftHost = self.addHost( 'h1' , ip='10.0.0.1/24')
+        rightHost = self.addHost( 'h2' , ip='10.0.0.2/24')
         Switch = self.addSwitch( 's1' )
 
         # Add links
         self.addLink( leftHost , Switch )
-        self.addLink( rightSwitch, Switch , params1={'delay':'50ms', 'bw' : 10} )
+        self.addLink( rightHost, Switch , params1={'delay':'50ms', 'bw' : 10} )
         self.setCPUFrac(leftHost,0.2)
 
 
