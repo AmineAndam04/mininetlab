@@ -2,7 +2,7 @@ from mininet.topo import Topo
 from mininet.link import TCIntf
 from mininet.node import CPULimitedHost
 
-class MyTopo( Topo,node,link ):
+class MyTopo( Topo,TCIntf,CPULimitedHost ):
 
     def build( self ):
         
