@@ -17,6 +17,9 @@ class MyTopo( Topo ):
         self.addLink( leftHost2 , leftSwitch )
         self.addLink( leftSwitch, rightSwitch )
         self.addLink( rightSwitch, rightHost )
+        
+        self.setIP(leftSwitch, ip="10.0.1.1")
+        self.setIP(rightSwitch, ip="10.0.2.1")
 
 
 topos = { 'mytopo': ( lambda: MyTopo() ) }
